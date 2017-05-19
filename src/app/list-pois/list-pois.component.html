@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <ngb-tabset>
+        <ngb-tab title="Liste">
+          <ng-template ngbTabContent>
+            <div *ngIf="isLoading">
+              <loader></loader>
+            </div>
+            <div *ngFor="let item of pois | paginate: { itemsPerPage: 4, currentPage: p }">
+              <poi [data]="item"></poi>
+            </div>
+            <pagination-controls class="my-pagination" (pageChange)="p = $event" nextLabel="Suivant" previousLabel="précédent"></pagination-controls>
+          </ng-template>
+        </ngb-tab>
+
+        <ngb-tab>
+          <ng-template ngbTabTitle>Carte</ng-template>
+          <ng-template ngbTabContent>
+            <div class="card">
+              <div class="card-block">
+                catre en cours .....
+              </div>
+            </div>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+    </div>
+
+    <div class="col-lg-4">
+      <filter-poi (filter)="newFilter($event)"></filter-poi>
+    </div>
+  </div>

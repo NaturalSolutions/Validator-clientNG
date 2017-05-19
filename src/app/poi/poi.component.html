@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-block">
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+      <img class="media-object" src="assets/img_poi/img{{data.id}}.jpg" width="200px" height="170px">
+        </a>
+      </div>
+
+      <div class="media-body">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-4">
+              <h4 class="media-heading">
+                {{ data.desc }}
+              </h4>
+              <h6> {{data.name }}</h6>
+              <h6>{{ data.postal_code}}</h6>
+              <br>
+              <h6> PACA openData</h6>
+               <a href="#" class=" voir float-right">Voir +</a>
+          
+            </div>
+
+            <div class="col-0">
+              <div class="ligne_verticale"></div>
+            </div>
+
+            <div class="col-2">
+              <br>
+              <button type="button" class="btn btn-success">
+  <span class="fa fa-check"></span>
+</button>
+<br>
+<br>
+           <button type="button" class="btn  btn-danger">
+  <span class="fa fa-trash-o" aria-hidden="true"></span>
+</button>
+             
+  </div>
+          </div>
+        </div>
+         
+      </div>
+    </div>
+  </div>
+</div>
