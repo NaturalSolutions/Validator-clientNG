@@ -30,5 +30,6 @@ export interface Poi {
 	desc_de?:string;
 	desc_it?:string;
 	withchild?: boolean;
+	userId?:number;
 	// period: new Period();
 }

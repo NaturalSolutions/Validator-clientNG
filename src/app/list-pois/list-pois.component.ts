@@ -1,46 +1,37 @@
-import {Component,OnInit} from '@angular/core';
-import {PoiComponent} from 'app/poi/poi.component';
-import {PoiService} from 'app/poi.service'; 
-
+import { Component, OnInit } from '@angular/core';
+import { PoiComponent } from 'app/poi/poi.component';
+import { PoiService } from 'app/poi.service';
+import { Poi } from 'app/poi/poi';
 
 @Component({
   selector: 'list-pois',
   templateUrl: './list-pois.component.html',
-  styleUrls: [ './list-pois.component.css' ]  
+  styleUrls: ['./list-pois.component.css']
 })
 
 export class ListPoisComponent implements OnInit {
-    pois: any[];
-    isLoading = true;
-    currentPois;
-    
-    constructor(private poisService: PoiService) {    
-    }
+  pois: Poi[];
+  isLoading = true;
+  
+  constructor(private poisService: PoiService) {
+  }
 
- ngOnInit(){
-  this.loadPois();
+  ngOnInit() {
+    this.loadPois();
+  }
 
-    }
+  private loadPois(filter?) {
+    this.poisService.getPoi(filter).subscribe(res => this.pois = res
+      , null,
+      () => { this.isLoading = false; });
+  }
 
-     private loadPois(filter?){
-       
-		 this.poisService.getPoi(filter).subscribe(res =>this.pois = res 
-            ,null, 
-            () => { this.isLoading = false; });
-            
-    }
+  reloadPosts(filter) {
+     this.loadPois(filter);
+  }
 
-     reloadPosts(filter){
-        this.currentPois = null;
-        
-        this.loadPois(filter);
-          
-    }
-
-    newFilter(event){
-   
-      this.reloadPosts(event);
-    }
+  newFilter(event) {
+    this.reloadPosts(event);
+  }
 }
-   
-     
+
