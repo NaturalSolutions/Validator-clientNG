@@ -1,0 +1,24 @@
+<ng-template #connexion let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">CONNEXION</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form #form="ngForm" (submit)="login(form)">
+    <div class="modal-body">
+      <div class="form-group" [class.has-danger]="email.invalid && email.touched">
+        <label for="email" class="form-control-label">Adresse email</label>
+        <input type="email" class="form-control" ngModel #email="ngModel" name="email" required id="email">
+      </div>
+      <div class="form-group" [class.has-danger]="pwd.invalid && pwd.touched">
+        <label for="pwd" class="form-control-label">Mot de passe</label>
+        <input type="password" class="form-control" ngModel #pwd="ngModel" name="password" required id="pwd">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-secondary">Se connecter</button>
+    </div>
+  </form>
+</ng-template>
+<div (click)="open(connexion)">Se connecter</div>

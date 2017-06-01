@@ -9,7 +9,7 @@
               <loader></loader>
             </div>
             <div *ngFor="let item of pois | paginate: { itemsPerPage: 4, currentPage: p }">
-              <poi [data]="item"></poi>
+              <poi [users]="users"  [data]="item"></poi>
             </div>
             <pagination-controls class="my-pagination" (pageChange)="p = $event" nextLabel="Suivant" previousLabel="précédent"></pagination-controls>
           </ng-template>
@@ -29,6 +29,9 @@
     </div>
 
     <div class="col-lg-4">
-      <filter-poi (filter)="newFilter($event)"></filter-poi>
+      <filter-poi [users]="users" (filter)="newFilter($event)"></filter-poi>
     </div>
   </div>
+
+
+  

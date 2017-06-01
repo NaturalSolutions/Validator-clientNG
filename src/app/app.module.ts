@@ -7,11 +7,8 @@ import { HttpModule } from '@angular/http';
 import {Ng2PaginationModule} from 'ng2-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-import {MdButtonModule, MdCheckboxModule} from '@angular/material';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-
-
-
 
 import { AppComponent } from './app.component';
 import { PoiComponent } from './poi/poi.component';
@@ -25,6 +22,11 @@ import { SharedModule }      from './shared/shared.module';
 import { UsersModule } from './users/users.module';
 import { routing } from './app.routing';
 import { usersRouting } from './users/users.routing';
+import { RegisterService} from './header/register-modal/register.service';
+import { LoginService} from './header/login-modal/login.service';
+import {LoginModalComponent } from './header/login-modal/login-modal.component';
+import { RegisterModalComponent } from './header/register-modal/register-modal.component';
+
 
 @NgModule({
   declarations: [
@@ -33,8 +35,10 @@ import { usersRouting } from './users/users.routing';
     ListPoisComponent,
     HeaderComponent,
     FilterPoiComponent,
-          
+        LoginModalComponent,
+    RegisterModalComponent, 
   ],
+  
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -43,16 +47,13 @@ import { usersRouting } from './users/users.routing';
     usersRouting,
     routing,
   
-
-    MdButtonModule, MdCheckboxModule,
-
     SharedModule,
      UsersModule ,
     NgbModule.forRoot(),
     Ng2PaginationModule
   ],
 
-  providers: [PoiService],
+  providers: [PoiService,RegisterService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

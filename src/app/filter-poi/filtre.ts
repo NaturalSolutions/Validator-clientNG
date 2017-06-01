@@ -1,4 +1,6 @@
 export interface Filtre {
-   typePoi?: string ;codePostal?: string;
+   typePoi?: string ;
+   user?:number;
+   codePostal?: number;
    dp?: string;
 }

@@ -1,10 +1,10 @@
-<div class="card">
-  <div class="card-block">
+<div class="card" >
+  <div class="card-block"  >
     <div class="media">
       <div class="media-left">
-        <a href="#">
+        
       <img class="media-object" src="assets/img_poi/img{{data.id}}.jpg" width="200px" height="170px">
-        </a>
+        
       </div>
 
       <div class="media-body">
@@ -18,8 +18,8 @@
               <h6> {{data.name }}</h6>
               <h6>{{ data.postal_code}}</h6>
               <br>
-              <h6> PACA openData</h6>
-               <a href="#" class=" voir float-right">Voir +</a>
+              <h6>{{users[data.userId-1].name}}</h6>
+               <a href="#" class=" float-right">Voir +</a>
           
             </div>
 

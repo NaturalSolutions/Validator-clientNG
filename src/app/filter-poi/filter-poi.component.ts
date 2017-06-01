@@ -1,5 +1,5 @@
-import { Component, Output ,EventEmitter} from '@angular/core';
-
+import { Component, Output,Input,EventEmitter} from '@angular/core';
+ import { User} from 'app/users/user/user';
 @Component({
   selector: 'filter-poi',
   templateUrl: './filter-poi.component.html',
@@ -7,15 +7,17 @@ import { Component, Output ,EventEmitter} from '@angular/core';
 })
 export class FilterPoiComponent{
   typePoi=["Jardins","Parcs"];
-      newValue
+  newValue;
 
+@Input() users ;
 
 @Output() filter= new EventEmitter();
 
 change(filterData){
 this.newValue=filterData.value;
   this.filter.emit(this.newValue)
-   
+
+     
 }
   
 }

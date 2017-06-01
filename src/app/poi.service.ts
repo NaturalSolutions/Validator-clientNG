@@ -17,13 +17,14 @@ export class PoiService {
           var poisUrl = this.poisUrl;
       
 
-              if (filter  && filter.typePoi && filter.codePostal)
-             poisUrl += "?postal_code=" + filter.codePostal+"&desc=" + filter.typePoi;
-             else 
-              if (filter && filter.typePoi)
+              if (filter  && filter.typePoi && filter.codePostal  && filter.user)
+             poisUrl += "?postal_code=" + filter.codePostal+"&desc=" + filter.typePoi+"&userId=" + filter.user;
+             else  if (filter && filter.typePoi)
              poisUrl += "?desc=" + filter.typePoi;
              else if (filter && filter.codePostal)
              poisUrl += "?postal_code=" + filter.codePostal;
+             else if (filter &&  filter.user)
+             poisUrl += "?userId=" + filter.user;
            
         
       return this.http.get(poisUrl).map(res => res.json());

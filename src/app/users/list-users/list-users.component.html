@@ -1,18 +1,21 @@
-  <img class="img-fluid" src="assets/users1.jpg"  width="100%"/>
+<img class="img-fluid" src="assets/users1.jpg" width="100%" />
 <div class="container">
   <div class="row">
     <div class="col-lg-6">
-     
-            <div *ngIf="isLoading">
-              <loader></loader>
-            </div>
-            <div *ngFor="let item of users | paginate: { itemsPerPage: 4, currentPage: p }">
-              <user [data]="item"></user>
-            </div>
-            <pagination-controls class="my-pagination" (pageChange)="p = $event" nextLabel="Suivant" previousLabel="précédent"></pagination-controls>
-          
-        
-    </div>
 
-  
+      <div *ngIf="isLoading">
+        <loader></loader>
+      </div>
+      <div *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p }">
+        <user (click)="select(user)" [active]=" currentUser" [data]="user" class="a"></user>
+      </div>
+      <pagination-controls class="my-pagination" (pageChange)="p = $event" nextLabel="Suivant" previousLabel="précédent"></pagination-controls>
+
+    </div>
+ 
+  <div class="col-lg-6">
+    <h4 *ngIf="currentUser">{{currentUser.id}}</h4>
   </div>
+   </div>
+
+</div>

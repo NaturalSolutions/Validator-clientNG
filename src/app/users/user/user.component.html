@@ -1,19 +1,18 @@
-<div class="card">
-  <div class="card-block">
-    <div class="media">
-      <div class="media-left">
-        <a href="#">
-      <img class="media-left rounded-circle"  src="http://lorempixel.com/80/80/people?random={{data.id }}">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">
-          {{data.name}}
-        </h4>
-        <h6>{{data.email}} </h6>
-        <h6 >{{data.address["city"]}}</h6>
-        <span class="fa fa-chevron-right float-right" style="color:gray"></span>
+
+    <div class="card " [class.card-info]="active==data"  >
+      <div class="card-block">
+        <div class="media">
+          <img class="media-left rounded-circle" src="http://lorempixel.com/80/80/people?random={{data.id }}">
+          <div class="media-body">
+            <h4 class="media-heading">
+              {{data.name}}
+            </h4>
+            <h6>{{data.email}} </h6>
+            <h6 style="display: inline-block">{{data.address["city"]}}</h6>
+            <span class="fa fa-chevron-right float-right" style="color:gray"></span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  
+  

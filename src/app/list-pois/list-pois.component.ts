@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PoiComponent } from 'app/poi/poi.component';
 import { PoiService } from 'app/poi.service';
 import { Poi } from 'app/poi/poi';
+ import { User} from 'app/users/user/user';
+import { UsersService } from 'app/users/users.service';
 
 @Component({
   selector: 'list-pois',
@@ -11,13 +13,17 @@ import { Poi } from 'app/poi/poi';
 
 export class ListPoisComponent implements OnInit {
   pois: Poi[];
+  users:User[];
+ erroMessage :string;
   isLoading = true;
   
-  constructor(private poisService: PoiService) {
+  constructor(private poisService: PoiService,private usersService: UsersService) {
   }
 
   ngOnInit() {
+    this.loadUsers();
     this.loadPois();
+
   }
 
   private loadPois(filter?) {
@@ -33,5 +39,12 @@ export class ListPoisComponent implements OnInit {
   newFilter(event) {
     this.reloadPosts(event);
   }
+
+
+  private loadUsers() {
+    this.usersService.getUsers().subscribe(res => this.users=res);
+       
+  
 }
 
+}

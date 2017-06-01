@@ -12,4 +12,5 @@ export class PoiComponent {
         //console.log(this.data);
     }
     @Input() data;  
+    @Input() users;
 }
