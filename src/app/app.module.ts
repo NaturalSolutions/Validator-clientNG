@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-
+import { AgmCoreModule } from '@agm/core';
 import {Ng2PaginationModule} from 'ng2-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -26,6 +26,11 @@ import { RegisterService} from './header/register-modal/register.service';
 import { LoginService} from './header/login-modal/login.service';
 import {LoginModalComponent } from './header/login-modal/login-modal.component';
 import { RegisterModalComponent } from './header/register-modal/register-modal.component';
+import { UserAccountModule } from './user-account/user-account.module';
+import { userAccountRouting } from './user-account/user-account.routing';
+import {AuthGuard} from 'app/auth-guard.service';
+
+
 
 
 @NgModule({
@@ -35,25 +40,31 @@ import { RegisterModalComponent } from './header/register-modal/register-modal.c
     ListPoisComponent,
     HeaderComponent,
     FilterPoiComponent,
-        LoginModalComponent,
-    RegisterModalComponent, 
+    LoginModalComponent,
+    RegisterModalComponent,
   ],
   
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     usersRouting,
+    userAccountRouting,
     routing,
   
     SharedModule,
-     UsersModule ,
+     UsersModule,
+     UserAccountModule,
     NgbModule.forRoot(),
-    Ng2PaginationModule
+    Ng2PaginationModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCp_NmNI8YGML7VhLo7xQSvZgBLRjEUVOI'
+       })
   ],
 
-  providers: [PoiService,RegisterService,LoginService],
+  providers: [PoiService,RegisterService,LoginService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

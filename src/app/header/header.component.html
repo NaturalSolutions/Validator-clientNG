@@ -1,32 +1,38 @@
-
- <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" routerLink="/" ><img  src="assets/logo/jardin1.png" class="img-fluid" height="60" width="60"></a>
+  <a class="navbar-brand" routerLink="/"><img  src="assets/logo/jardin1.png" class="img-fluid" height="60" width="60"></a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-        <a class="nav-link "  routerLink="/" ><span class="fa fa-home" ></span> Accueil</a>
+        <a class="nav-link " routerLink="/"><span class="fa fa-home" ></span> Accueil</a>
       </li>
       <li class="nav-item ">
         <a class="nav-link" routerLink="contributions" routerLinkActive="active">Contributions</a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" routerLink="utilisateurs"  routerLinkActive="active">Utlisiateurs</a>
+        <a class="nav-link" routerLink="utilisateurs" routerLinkActive="active">Utilisateurs</a>
       </li>
-      
+
     </ul>
-    
-    
-      <ul class="navbar-nav"> 
-      <li class="nav-item "><regModal class="nav-link"></regModal></li>
-         <li class="nav-item "><log-modal class="nav-link"></log-modal></li>
-         </ul>
- 
 
 
-
-
-  
+    <ul class="navbar-nav">
+      <li  *ngIf="!connect.isconnected()" class="nav-item ">
+        <regModal class="nav-link" (alert)="newAlert($event)"></regModal>
+      </li>
+      <li  *ngIf="!connect.isconnected()" class="nav-item ">
+        <log-modal class="nav-link"></log-modal>
+      </li>
+       <li *ngIf="connect.isconnected()" class="nav-item ">
+        <a class="nav-link" routerLink="mon-compte" routerLinkActive="active">Mon Compte</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<ngb-alert type="success" class="ngb-alert1" *ngIf="show && successMessage"  (close)="closeAlert()" dismissible=true>
+    <strong>Félicitation!</strong> Vous étes bien enregister
+  </ngb-alert>

@@ -1,5 +1,5 @@
-  <img class="img-fluid" src="assets/contributions1.jpg" height="80" width="100%"/>
-  <div class="container">
+<img class="img-fluid" src="assets/contributions1.jpg" height="80" width="100%" />
+<div class="container">
   <div class="row">
     <div class="col-lg-8">
       <ngb-tabset>
@@ -9,7 +9,8 @@
               <loader></loader>
             </div>
             <div *ngFor="let item of pois | paginate: { itemsPerPage: 4, currentPage: p }">
-              <poi [users]="users"  [data]="item"></poi>
+
+              <poi [users]="users" [data]="item"></poi>
             </div>
             <pagination-controls class="my-pagination" (pageChange)="p = $event" nextLabel="Suivant" previousLabel="précédent"></pagination-controls>
           </ng-template>
@@ -20,7 +21,7 @@
           <ng-template ngbTabContent>
             <div class="card">
               <div class="card-block">
-                catre en cours .....
+                <div id="mapid" ></div>
               </div>
             </div>
           </ng-template>
@@ -32,6 +33,3 @@
       <filter-poi [users]="users" (filter)="newFilter($event)"></filter-poi>
     </div>
   </div>
-
-
-  

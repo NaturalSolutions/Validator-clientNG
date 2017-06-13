@@ -5,18 +5,19 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <form #form="ngForm" (submit)="login(form)">
+  <ngb-alert type="danger" [dismissible]="false" class="ngb-alert" *ngIf="msg_error"> {{msg_error}} </ngb-alert>
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm)" >
     <div class="modal-body">
-      <div class="form-group" [class.has-danger]="email.invalid && email.touched">
+      <div class="form-group" [class.has-danger]="loginForm.controls.email.touched && loginForm.controls.email.invalid ">
         <label for="email" class="form-control-label">Adresse email</label>
-        <input type="email" class="form-control" ngModel #email="ngModel" name="email" required id="email">
+        <input  formControlName="email" class="form-control"  ngControl="email"  id="email">
       </div>
-      <div class="form-group" [class.has-danger]="pwd.invalid && pwd.touched">
+      <div class="form-group" [class.has-danger]="loginForm.controls.password.touched && loginForm.controls.password.invalid ">
         <label for="pwd" class="form-control-label">Mot de passe</label>
-        <input type="password" class="form-control" ngModel #pwd="ngModel" name="password" required id="pwd">
+        <input   formControlName="password" type="password" class="form-control"  id="pwd">
       </div>
     </div>
-    <div class="modal-footer">
+    <div class="modal-footer"> 
       <button type="submit" class="btn btn-secondary">Se connecter</button>
     </div>
   </form>

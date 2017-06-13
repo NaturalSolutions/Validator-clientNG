@@ -9321,3 +9321,11 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
  .my-pagination .ng2-pagination .current {
     background: green;
   }
+
+  .ngb-alert{
+ padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    margin-bottom: -16px;
+
+}

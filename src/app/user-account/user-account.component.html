@@ -1,0 +1,14 @@
+
+    <h1> Mon compte </h1>
+    <h3> {{currentUser.firstName}} {{currentUser.email}}</h3>
+    <h2>All registered users:</h2>
+    <ul>
+        <li *ngFor="let user of users">
+            {{user.email}} ({{user.firstName}} {{user.lastName}})
+           
+             <button type="button" class="btn  btn-danger" (click)="deleteUser(user._id)">
+  <span class="fa fa-trash-o" aria-hidden="true"></span>
+</button>
+        </li>
+    </ul>
+    <button  (click)="logout()"  >Se déconnecter</button>
