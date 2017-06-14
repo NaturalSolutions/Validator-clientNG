@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AgmCoreModule } from '@agm/core';
 import {Ng2PaginationModule} from 'ng2-pagination';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule, NgbTabset} from '@ng-bootstrap/ng-bootstrap';
 
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
@@ -29,7 +29,7 @@ import { RegisterModalComponent } from './header/register-modal/register-modal.c
 import { UserAccountModule } from './user-account/user-account.module';
 import { userAccountRouting } from './user-account/user-account.routing';
 import {AuthGuard} from 'app/auth-guard.service';
-
+import { PoiMapComponent } from './poi-map/poi-map.component';
 
 
 
@@ -42,6 +42,7 @@ import {AuthGuard} from 'app/auth-guard.service';
     FilterPoiComponent,
     LoginModalComponent,
     RegisterModalComponent,
+    PoiMapComponent,
   ],
   
   imports: [
@@ -64,7 +65,7 @@ import {AuthGuard} from 'app/auth-guard.service';
        })
   ],
 
-  providers: [PoiService,RegisterService,LoginService,AuthGuard],
+  providers: [PoiService,RegisterService,LoginService,AuthGuard,NgbTabset],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

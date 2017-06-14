@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
-      <ngb-tabset>
+      <ngb-tabset  >
         <ngb-tab title="Liste">
           <ng-template ngbTabContent>
             <div *ngIf="isLoading">
@@ -21,7 +21,7 @@
           <ng-template ngbTabContent>
             <div class="card">
               <div class="card-block">
-                <div id="mapid" ></div>
+               <poi-map [pois]="pois">  </poi-map>
               </div>
             </div>
           </ng-template>

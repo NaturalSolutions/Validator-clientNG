@@ -23,7 +23,7 @@ constructor(private connect :LoginService){}
     setTimeout(() => this.staticAlertClosed = true, 20000);
     this._success.subscribe((message) => this.successMessage = message);
     this._success.debounceTime(6000).subscribe(() => this.successMessage = null);
-    console.log(this.connect.isconnected());
+    
     
   }
   newAlert(event) {
