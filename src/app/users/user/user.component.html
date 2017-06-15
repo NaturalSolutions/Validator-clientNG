@@ -1,14 +1,14 @@
 
-    <div class="card " [class.card-info]="active==data"  >
+    <div class="card " [class.card-info]="active==userData"  >
       <div class="card-block">
         <div class="media">
-          <img class="media-left rounded-circle" src="http://lorempixel.com/80/80/people?random={{data.id }}">
+          <img class="media-left rounded-circle" src="http://lorempixel.com/80/80/people?random={{userData.id }}">
           <div class="media-body">
             <h4 class="media-heading">
-              {{data.name}}
+              {{userData.name}}
             </h4>
-            <h6>{{data.email}} </h6>
-            <h6 style="display: inline-block">{{data.address["city"]}}</h6>
+            <h6>{{userData.email}} </h6>
+            <h6 style="display: inline-block">{{userData.address["city"]}}</h6>
             <span class="fa fa-chevron-right float-right" style="color:gray"></span>
           </div>
         </div>

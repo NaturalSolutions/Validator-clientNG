@@ -1,9 +1,11 @@
   export interface User {
   id?: number;
   name?: string;
+  score?: number;
    password?: string;
     firstName?: string;
       LastName?: string;
+      
 username?: string;
 email?:string;
       address?:{

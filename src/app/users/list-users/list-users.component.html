@@ -6,13 +6,13 @@
     <div *ngIf="isLoading">
       <loader></loader>
     </div>
-    <div *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p }">
-      <user (click)="select(user)" [active]=" currentUser" [data]="user" class="a"></user>
+    <div *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p } ">
+      <user (click)="select(user)" [active]=" currentUser" [userData]="user" class="a"></user>
     </div>
     <pagination-controls class="my-pagination" (pageChange)="p = $event" nextLabel="Suivant" previousLabel="précédent"></pagination-controls>
   </div>
 
   <div class="col-lg-6">
-    <h4 *ngIf="currentUser">{{currentUser.id}}</h4>
+    <h4 *ngIf="currentUser">{{currentUser.score}}</h4>
   </div>
 </div>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserComponent } from '../user/user.component';
 import { UsersService } from '../users.service';
 import { User } from '../user/user';
 
@@ -19,12 +18,15 @@ export class ListUsersComponent implements OnInit {
 
   ngOnInit() {
     this.loadUsers();
+
   }
 
   private loadUsers() {
     this.usersService.getUsers().subscribe(res => this.users = res
       , null,
-      () => { this.isLoading = false});
+      () => {
+        this.isLoading = false;
+      });
   }
   select(user) {
     this.currentUser = user;

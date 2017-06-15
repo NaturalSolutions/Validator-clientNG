@@ -1,21 +1,16 @@
-import { Component,  Input } from '@angular/core';
-import {UsersService } from '../users.service';
+import { Component, Input } from '@angular/core';
+import { UsersService } from '../users.service';
 @Component({
   selector: 'user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
-  IDBCursorDirection
 
-isLoading=false;
-user;
-  constructor(private usersService: UsersService) {
-  }
+  isLoading = false;
 
-	
- @Input() data;  
-  @Input() active;  
+  @Input() userData;
+  @Input() active;
 
 
 }

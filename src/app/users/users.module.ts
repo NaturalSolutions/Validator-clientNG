@@ -22,6 +22,7 @@ import { SharedModule }      from 'app/shared/shared.module';
     Ng2PaginationModule
   ],
   declarations: [ListUsersComponent, UserComponent],
+  exports:[UserComponent],
   providers:[UsersService]
 })
 export class UsersModule { }

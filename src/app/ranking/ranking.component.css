@@ -1,0 +1,14 @@
+.media-left {
+       margin-right: 20px;
+ }
+ .card{
+     background-color: #dfdfdf; 
+    
+ }
+ .card-block{
+ padding-top: 10px;
+    padding-bottom: 10px;
+ }
+.ranking{
+    margin-top: 30px;
+}

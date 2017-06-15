@@ -8,7 +8,7 @@
             <div *ngIf="isLoading">
               <loader></loader>
             </div>
-            <div *ngFor="let item of pois | paginate: { itemsPerPage: 4, currentPage: p }">
+            <div *ngFor="let item of pois | paginate: { itemsPerPage: 5, currentPage: p }">
 
               <poi [users]="users" [data]="item"></poi>
             </div>
@@ -31,5 +31,6 @@
 
     <div class="col-lg-4">
       <filter-poi [users]="users" (filter)="newFilter($event)"></filter-poi>
+      <ranking [userData]="users"></ranking>
     </div>
   </div>

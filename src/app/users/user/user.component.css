@@ -1,8 +1,8 @@
 
 .media-left {
-              margin-right: 20px;
-                    }
-                    .card.card-info{
-                          background-color: #ddd;
-                              border-color: #ccc;
-                    }
+       margin-right: 20px;
+ }
+.card.card-info{
+      background-color: #ddd;
+      border-color: #ccc;
+}

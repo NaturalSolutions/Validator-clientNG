@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PoiComponent } from 'app/poi/poi.component';
 import { PoiService } from 'app/poi.service';
 import { Poi } from 'app/poi/poi';
 import { User } from 'app/users/user/user';
@@ -17,10 +16,6 @@ export class ListPoisComponent implements OnInit {
   pois: Poi[];
   users: User[];
   isLoading = true;
-
-
-  lat: number = 43.300000;
-  lng: number = 5.400000;
 
   constructor(private poisService: PoiService,
     private usersService: UsersService) {
