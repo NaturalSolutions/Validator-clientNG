@@ -1,6 +1,7 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges,ElementRef } from '@angular/core';
 import { Poi } from 'app/poi/poi';
-import 'leaflet';
+import * as L from 'leaflet';
+import 'leaflet.markercluster';
 
 @Component({
   selector: 'poi-map',
@@ -46,17 +47,19 @@ export class PoiMapComponent implements OnChanges {
 
       L.control.layers(baseLayers).addTo(this.mymap);
 
+  var markersList = L.markerClusterGroup();
       this.pois.forEach(element => {
-        this.markers = L.marker([element.latitude, element.longitude]).addTo(this.mymap);
-        this.markers.bindPopup('<b>' + element.desc + '</b>' + '<br>' + element.name);
-
+        markersList.addLayer(L.marker([element.latitude, element.longitude])
+        .bindPopup('<b>' + element.desc + '</b>' + '<br>'
+         + '<a href="/contributions/'+ element.id+'">'+ element.name+'</a>'));
       });
 
+this.mymap.addLayer(markersList);
     };
   }
 
-
   @Input() pois: Poi[];
+     
 }
 
 

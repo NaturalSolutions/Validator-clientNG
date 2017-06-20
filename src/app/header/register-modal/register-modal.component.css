@@ -1,13 +1,21 @@
 .custom-modal  {
       margin-top: 100px;
-      };
-.ngb-alert{
- padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
+      }
 
+.ngb-alert{
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 10px;
 }
 
+p{
+      margin-bottom: 0px;
+      color: gray
+}
+ .info{
+       margin-left: 5px;
+       cursor: pointer
+ }
    
    
   

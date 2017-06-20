@@ -29,6 +29,8 @@ import { userAccountRouting } from './user-account/user-account.routing';
 import {AuthGuard} from 'app/auth-guard.service';
 import { PoiMapComponent } from './poi-map/poi-map.component';
 import { RankingComponent } from './ranking/ranking.component';
+import { PoiDetailsComponent } from './poi-details/poi-details.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -42,6 +44,8 @@ import { RankingComponent } from './ranking/ranking.component';
     RegisterModalComponent,
     PoiMapComponent,
     RankingComponent,
+    PoiDetailsComponent,
+    PageNotFoundComponent,
   ],
   
   imports: [

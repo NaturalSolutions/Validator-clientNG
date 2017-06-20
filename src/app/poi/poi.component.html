@@ -1,10 +1,10 @@
-<div class="card" >
-  <div class="card-block"  >
+<div class="card">
+  <div class="card-block">
     <div class="media">
       <div class="media-left">
-        
-      <img class="media-object" src="assets/img_poi/img{{data.id}}.jpg" width="200px" height="170px">
-        
+
+        <img class="media-object" src="assets/img_poi/img{{data.id}}.jpg" width="200px" height="170px">
+
       </div>
 
       <div class="media-body">
@@ -19,8 +19,8 @@
               <h6>{{ data.postal_code}}</h6>
               <br>
               <h6>{{users[data.userId-1].name}}</h6>
-               <a href="#" class=" float-right">Voir +</a>
-          
+              <a [routerLink]="['/contributions',data.id]"  class=" float-right">Voir +</a>
+
             </div>
 
             <div class="col-0">
@@ -32,16 +32,14 @@
               <button type="button" class="btn btn-success">
   <span class="fa fa-check"></span>
 </button>
-<br>
-<br>
-           <button type="button" class="btn  btn-danger">
+              <br>
+              <br>
+              <button type="button" class="btn  btn-danger">
   <span class="fa fa-trash-o" aria-hidden="true"></span>
 </button>
-             
-  </div>
+            </div>
           </div>
         </div>
-         
       </div>
     </div>
   </div>
