@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header">
+    <h6>COMMENTAIRES</h6>
+  </div>
+  <div class="card-block">
+    <div *ngFor="let comment of comments">
+      <div class="card comments">
+        <div class="card-block comments">
+          <div class="media">
+            <img class="media-left rounded-circle d-flex align-self-center mr-3" src="http://lorempixel.com/80/80/people?random={{comment.id }}">
+            <div class="media-body">
+              <b class="media-heading">
+              {{comment.name}} <i (click)=delete(comment) class="fa fa-times-circle pull-right" ></i>
+            </b>
+           
+              <p>{{comment.body}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <form [formGroup]="comForm" (submit)="add(comForm)">
+    <div class="form-group">
+        <textarea class="form-control" formControlName="body" id="com" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success pull-right">Publier</button>
+      </form>
+  </div>
+</div>

@@ -10,7 +10,6 @@ import 'leaflet.markercluster';
 })
 export class PoiMapComponent implements OnChanges {
   mymap;
-  markers;
   mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}';
   mbAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
   '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +

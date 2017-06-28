@@ -1,0 +1,26 @@
+#mapid { height: 280px; 
+}
+ .card{
+     margin-top: 20px;
+     margin-bottom: 10px;
+ }
+ .card-header{
+     background-color: white
+ }
+ .modif{
+     color: brown;
+     cursor: pointer
+}
+button{
+    margin-left: 10px
+}
+.adress{
+    padding-left: 0px;
+    padding-right: 0px
+}
+.max{
+    padding-left: 0px;
+}
+input{
+      border-color: green;
+}

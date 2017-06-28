@@ -1,10 +1,11 @@
 export interface Poi {
     id? : number;
 	name? :   string ;
+	poiId?:number;
 	version?      : number ;
 	longitude?    : number ;
 	latitude?     : number ; 
-	type_id? : number ; 
+	typespois?:string;
 	name_en?:string;
 	name_fr?:string;
 	name_es?:string; 
@@ -23,12 +24,10 @@ export interface Poi {
 	resa_link?:string;
 	url_img1?:string;
 	url_img2?:string;
+	url_img3?:string;
 	desc?:string;
-	desc_en?:string;
-	desc_fr?:string;
-	desc_es?:string;
-	desc_de?:string;
-	desc_it?:string;
+	price?:string;
+	city?:string;
 	withchild?: boolean;
 	userId?:number;
 	// period: new Period();

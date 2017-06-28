@@ -1,0 +1,23 @@
+<div *ngIf="!update" (click)="modifie()" class="float-right modif">
+  Modifier
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x " style="color:brown"></i>
+    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> 
+  </span>
+</div>
+<br *ngIf="!update">
+<div class="card">
+  <div class="card-header">
+    <h6>DESCRIPTION</h6>
+  </div>
+  <div class="card-block">
+    <p *ngIf="!update" class="card-text">{{pois.desc}}</p>
+    <form *ngIf="update" [formGroup]="descForm" (submit)="reset()" (submit)="change(descForm)">
+      <div class="form-group">
+        <textarea class="form-control" formControlName="desc" id="desc" rows="4"></textarea>
+      </div>
+      <button type="submit"  class="btn btn-success pull-right">Modifier</button>
+      <button type="submit" class="btn btn-danger pull-right">Anuuler</button>
+    </form>
+  </div>
+</div>

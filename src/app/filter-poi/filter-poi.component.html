@@ -4,20 +4,22 @@
     <div class="card-block">
         <form [formGroup]="filterForm" (reset)="reset(filterForm)" (submit)="change(filterForm)">
             <div class="form-group">
-                <select class="form-control" formControlName="desc">
-                  <option value="">Type de Poi...</option>
+                <label for="typespois" class="form-control-label">Type des Pois</label>
+                <select class="form-control" formControlName="typespois">
+                  <option value="">Selectionner un type des Pois ...</option>
                     <option *ngFor="let type of typePoi" value="{{ type }}">
                      {{ type }}
                     </option>
                 </select>
             </div>
             <div class="form-group">
+                <label for="userId" class="form-control-label">Contributeur</label>
                 <select class="form-control" formControlName="userId">
-            <option value="">Selectionner un contributeur...</option>
-            <option *ngFor="let user of users" value="{{user.id}}">
-                {{user.name}}
-            </option>
-        </select>
+                    <option value="">Selectionner un contributeur ...</option>
+                        <option *ngFor="let user of users" value="{{user.id}}">
+                         {{user.name}}
+                         </option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="postal_code" class="form-control-label">Code postal</label>
@@ -31,6 +33,15 @@
                         <i class="fa fa-calendar" style="cursor: pointer"></i>
                     </div>
                 </div>
+            </div>
+            <div class="form-group">
+                <label for="validateStatus" class="form-control-label">Status des pois</label>
+                <select class="form-control" formControlName="validateStatus">
+                    <option value="">Selectionner un status des pois ...</option>
+                        <option *ngFor="let stat of status" value="{{stat}}" >
+                         {{ stat }}
+                         </option>
+                </select>
             </div>
             <button type="reset" class="btn btn-secondary ">Réinitialiser</button>
             <button type="submit" class="btn btn-secondary pull-right">Filtrer</button>

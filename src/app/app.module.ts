@@ -6,14 +6,10 @@ import {Ng2PaginationModule} from 'ng2-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-
 import { AppComponent } from './app.component';
 import { PoiComponent } from './poi/poi.component';
 import { ListPoisComponent } from './list-pois/list-pois.component';
 import { PoiService } from './poi.service';
-
-
 import { HeaderComponent } from './header/header.component';
 import { FilterPoiComponent } from './filter-poi/filter-poi.component';
 import { SharedModule }      from './shared/shared.module';
@@ -29,7 +25,7 @@ import { userAccountRouting } from './user-account/user-account.routing';
 import {AuthGuard} from 'app/auth-guard.service';
 import { PoiMapComponent } from './poi-map/poi-map.component';
 import { RankingComponent } from './ranking/ranking.component';
-import { PoiDetailsComponent } from './poi-details/poi-details.component';
+import { PoiDetailsModule } from './poi-details/poi-details.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
@@ -44,13 +40,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RegisterModalComponent,
     PoiMapComponent,
     RankingComponent,
-    PoiDetailsComponent,
     PageNotFoundComponent,
   ],
   
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
@@ -60,6 +54,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   
     SharedModule,
      UsersModule,
+      PoiDetailsModule,
      UserAccountModule,
     NgbModule.forRoot(),
     Ng2PaginationModule,

@@ -1,0 +1,104 @@
+<div *ngIf="!update" (click)="modifie()" class="float-right modif">
+  Modifier
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x " style="color:brown"></i>
+    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> 
+  </span>
+</div>
+<br *ngIf="!update">
+<div class="card">
+  <div class="card-header">
+    <h6>INFOS PRATIQUES</h6>
+  </div>
+  <div class="card-block">
+    <div class="row">
+      <div class="col-lg-7">
+        <ul *ngIf="!update" class="list-unstyled">
+          <li class="media">
+            <span class="fa-stack fa-lg d-flex mr-3 ">
+            <i class="fa fa-circle fa-stack-2x " style="color:green"></i>
+            <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i> 
+          </span>
+            <div class="media-body">
+              <h6 class="mt-0">Adresse</h6>
+              <p class="mb-0"> {{pois.street}} {{pois.postal_code}} {{pois.city}}</p>
+            </div>
+          </li>
+          <li class="media my-4">
+            <span class="fa-stack fa-lg d-flex mr-3 ">
+            <i class="fa fa-circle fa-stack-2x " style="color:green"></i>
+            <i class="fa fa-clock-o fa-stack-1x fa-inverse"></i> 
+          </span>
+            <div class="media-body">
+              <h6 class="mt-0">Temps de visite</h6>
+              <p class="mb-0"> Min: {{pois.visit_time_min}}min - Max: {{pois.visit_time_max}}min</p>
+            </div>
+          </li>
+          <li class="media my-4">
+            <span class="fa-stack fa-lg d-flex mr-3 ">
+            <i class="fa fa-circle fa-stack-2x " style="color:green"></i>
+            <i class="fa fa-eur fa-stack-1x fa-inverse"></i> 
+          </span>
+            <div class="media-body">
+              <h6 class="mt-0">Traif</h6>
+              <p class="mb-0">{{pois.price}}</p>
+            </div>
+          </li>
+          <li class="media my-4">
+            <span class="fa-stack fa-lg d-flex mr-3 ">
+            <i class="fa fa-circle fa-stack-2x " style="color:green"></i>
+            <i class="fa fa-phone fa-stack-1x fa-inverse"></i> 
+          </span>
+            <div class="media-body">
+              <h6 class="mt-0">Téléphone</h6>
+              <p class="mb-0">{{pois.phone}}</p>
+            </div>
+          </li>
+        </ul> 
+        <form *ngIf="update" [formGroup]="infoForm" (submit)="reset()" (submit)="change(infoForm)">
+        <div class="form-group">
+           <div class="row">
+          <div class="col-sm-7">
+          <label for="adresse" class="form-control-label"><i class="fa fa-map-marker fa-lg" style="color:green"></i> Adresse:</label>
+          <input type="string" class="form-control" formControlName="street" id="adresse">
+          </div>
+           <div class="col-sm-2 adress">
+             <label for="codePostal" class="form-control-label">Code postal:</label>
+          <input type="number" class="form-control" formControlName="postal_code" id="codePostal">
+             </div>
+             <div class="col-sm-3">
+             <label for="ville" class="form-control-label">Ville:</label>
+          <input type="string" class="form-control" formControlName="city" id="ville">
+             </div>
+             </div>
+        </div>
+        <div class="form-group">
+           <div class="row">
+          <div class="col-sm-6">
+          <label for="timeMin" class="form-control-label "><i class="fa fa-clock-o fa-lg" style="color:green"></i> Temps de viste Min:</label>
+          <input type="string" class="form-control" formControlName="visit_time_min" id="timeMin">
+          </div>
+           <div class="col-sm-6 max">
+          <label for="timeMax" class="form-control-label">Temps de viste Max:</label>
+          <input type="string" class="form-control" formControlName="visit_time_max" id="timeMax">
+          </div>
+        </div>
+        </div> 
+        <div class="form-group">
+          <label for="price" class="form-control-label "><i class="fa fa-eur fa-lg" style="color:green"></i> Prix:</label>
+          <input type="string" class="form-control" formControlName="price" id="price">
+        </div>
+        <div class="form-group">
+          <label for="phone" class="form-control-label "><i class="fa fa-phone fa-lg" style="color:green"></i> Téléphone:</label>
+          <input type="string" class="form-control" formControlName="phone" id="phone">
+        </div>
+         <button type="submit"  class="btn btn-success pull-right">Modifier</button>
+      <button type="submit" class="btn btn-danger pull-right">Anuuler</button>
+      </form>
+      </div>
+      <div class="col-lg-5">
+        <div id="mapid"></div>
+      </div>
+    </div>
+  </div>
+</div>

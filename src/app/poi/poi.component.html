@@ -2,9 +2,7 @@
   <div class="card-block">
     <div class="media">
       <div class="media-left">
-
-        <img class="media-object" src="assets/img_poi/img{{data.id}}.jpg" width="200px" height="170px">
-
+        <img class="media-object" src="{{data.url_img1}}" width="200px" height="170px">
       </div>
 
       <div class="media-body">
@@ -13,13 +11,13 @@
 
             <div class="col-4">
               <h4 class="media-heading">
-                {{ data.desc }}
+                {{ data.typespois}}
               </h4>
               <h6> {{data.name }}</h6>
               <h6>{{ data.postal_code}}</h6>
               <br>
               <h6>{{users[data.userId-1].name}}</h6>
-              <a [routerLink]="['/contributions',data.id]"  class=" float-right">Voir +</a>
+              <a [routerLink]="['/contributions',data.id]"  class="float-right">Voir +</a>
 
             </div>
 

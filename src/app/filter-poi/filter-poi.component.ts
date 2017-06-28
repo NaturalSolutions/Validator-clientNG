@@ -1,8 +1,7 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
-import { User } from 'app/users/user/user';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { User} from 'app/users/user/user';
+import { FormBuilder, FormGroup} from '@angular/forms';
 import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
-
 
 @Component({
   selector: 'filter-poi',
@@ -12,7 +11,8 @@ import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 
 export class FilterPoiComponent implements OnInit {
 
-  typePoi = ["Jardins", "Parcs"];
+  private typePoi = ["Jardins", "Parcs"];
+  private status = ["validé", "non validé"];
   filterForm: FormGroup;
   constructor(private dateFormatter: NgbDateParserFormatter,
     private fb: FormBuilder) {
@@ -20,10 +20,11 @@ export class FilterPoiComponent implements OnInit {
 
   ngOnInit() {
     this.filterForm = this.fb.group({
-      desc: [''],
+      typespois: [''],
       userId: [''],
       postal_code: [''],
-      add_date: ['']
+      add_date: [''],
+      validateStatus:['']
     })
   }
 

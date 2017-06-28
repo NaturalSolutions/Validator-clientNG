@@ -3627,12 +3627,12 @@ tbody.collapse.show {
 
 .custom-control-input:checked ~ .custom-control-indicator {
   color: #fff;
-  background-color: #0275d8;
+  background-color: #5cb85c;
 }
 
 .custom-control-input:focus ~ .custom-control-indicator {
-  -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 3px #0275d8;
-          box-shadow: 0 0 0 1px #fff, 0 0 0 3px #0275d8;
+  -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 3px #5cb85c;
+          box-shadow: 0 0 0 1px #fff, 0 0 0 3px #5cb85c;
 }
 
 .custom-control-input:active ~ .custom-control-indicator {

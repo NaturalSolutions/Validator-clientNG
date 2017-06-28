@@ -1,0 +1,18 @@
+.card-header{
+     background-color: white
+ }
+.card{
+     margin-top: 20px;
+     margin-bottom: 10px;
+ }
+ .modif{
+     color: brown;
+     cursor: pointer
+}
+#desc{
+    border-color: green;
+    border-width: 1px;
+}
+button{
+    margin-left: 10px
+}

@@ -1,0 +1,32 @@
+ .card.comments{
+     margin-top: 0px;
+     margin-bottom: 8px;
+ }
+ .card{
+     margin-top: 20px;
+     margin-bottom: 10px;
+ }
+ .card-header{
+     background-color: white
+ }
+ .card-block.comments{
+        padding-left: 10px;
+    padding-right: 10px;
+
+ }
+ .comments{
+     background-color: #dfdfdf;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 1px;
+    margin-top: 1px
+ }
+ .fa-times-circle{
+    cursor: pointer
+ }
+ #com{
+     margin-top: 30px;
+     width: 95% ;
+     margin-left: 50px
+ }
+
