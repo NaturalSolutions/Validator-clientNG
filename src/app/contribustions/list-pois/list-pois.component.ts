@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PoiService } from 'app/poi.service';
-import { Poi } from 'app/poi/poi';
+import { PoiService } from 'app/services/poi.service';
+import { Poi } from '../poi/poi';
 import { User } from 'app/users/user/user';
-import { UsersService } from 'app/users/users.service';
+import { UsersService } from 'app/services/users.service';
 
 
 @Component({

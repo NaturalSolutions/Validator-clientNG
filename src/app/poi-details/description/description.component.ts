@@ -1,7 +1,7 @@
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
-import {Poi} from 'app/poi/poi';
+import {Poi} from 'app/contribustions/poi/poi';
 import {FormBuilder,FormGroup} from '@angular/forms';
-
+import { LoginService} from 'app/services/login.service';
 @Component({
   selector: 'description',
   templateUrl: './description.component.html',
@@ -11,7 +11,8 @@ export class DescriptionComponent implements OnInit {
   @Input() pois: Poi;
   update=false;
   descForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(private connect :LoginService,
+    private fb: FormBuilder) {
   }
 
   ngOnInit() { this.descForm = this.fb.group({

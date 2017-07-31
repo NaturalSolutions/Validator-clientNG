@@ -1,5 +1,6 @@
 import { Component, OnInit,Input,Output,EventEmitter} from '@angular/core';
 import {FormBuilder,FormGroup} from '@angular/forms';
+import { LoginService} from 'app/services/login.service';
 
 @Component({
   selector: 'comments',
@@ -11,7 +12,8 @@ export class CommentsComponent implements OnInit {
    @Input() comments ;
    currentComment;
    comForm: FormGroup;
-   constructor(private fb: FormBuilder) {
+   constructor(private connect :LoginService,
+    private fb: FormBuilder) {
   }
 
   ngOnInit() { this.comForm = this.fb.group({

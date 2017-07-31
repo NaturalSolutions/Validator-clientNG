@@ -1,1 +1,18 @@
-.container {margin-top: 50px;};
+.container {margin-top: 50px}
+
+.media-object {
+  border-radius: 10px;
+}
+
+.media-body {
+  margin-left: 20px;
+  vertical-align: middle
+}
+.card.poi {
+  margin-bottom: 10px
+}
+
+.card-block.poi {
+  padding: 10px;
+  background-color: #f1f4f1
+}

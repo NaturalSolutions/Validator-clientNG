@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
- import { User} from './user/user';
+ import { User} from 'app/users/user/user';
  
 @Injectable()
 export class UsersService {

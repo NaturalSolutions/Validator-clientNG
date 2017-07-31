@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoginService } from './login.service';
+import { LoginService } from 'app/services/login.service';
 import { User } from 'app/users/user/user';
 import{FormValidator} from 'app/shared/formValidator.component'
 
@@ -15,7 +15,6 @@ export class LoginModalComponent  {
 
     user: User;
     msg_error: string;
-    
     loginForm: FormGroup;
 
     private modalRef: NgbModalRef;
@@ -33,7 +32,7 @@ export class LoginModalComponent  {
         })
     }
 
-    login(loginForm) {
+    private login(loginForm) {
         this.user = loginForm.value;
         this.loginService.login(this.user.email, this.user.password)
             .subscribe(

@@ -7,35 +7,34 @@
   <ngb-alert type="danger" [dismissible]="false" class="ngb-alert" *ngIf="msg_error"> {{msg_error}} </ngb-alert>
   <form [formGroup]="registerForm" (submit)="change(registerForm)">
     <div class="modal-body">
-
       <div class="form-group " [class.has-success]="registerForm.controls.firstName.valid" [class.has-danger]="registerForm.controls.firstName.invalid && registerForm.controls.firstName.touched">
         <label for="firstName" class="form-control-label">Prénom*</label>
         <input class="form-control form-control-success form-control-danger" formControlName="firstName" id="firstName">
-      </div>
-       <div *ngIf="registerForm.controls.firstName.touched && registerForm.controls.firstName.invalid" class="alert alert-danger">
-        veuillez renseigner un Prénom
+        <div *ngIf="registerForm.controls.firstName.touched && registerForm.controls.firstName.invalid" class="form-control-feedback">
+          veuillez renseigner un Prénom
+        </div>
       </div>
       <div class="form-group" [class.has-success]="registerForm.controls.lastName.valid" [class.has-danger]="registerForm.controls.lastName.invalid && registerForm.controls.lastName.touched">
         <label for="lastName" class="form-control-label">Nom*</label>
         <input class="form-control form-control-success form-control-danger" formControlName="lastName" id="lastName">
-      </div>
-      <div *ngIf="registerForm.controls.lastName.touched && registerForm.controls.lastName.invalid" class="alert alert-danger">
-        veuillez renseigner un nom
+        <div *ngIf="registerForm.controls.lastName.touched && registerForm.controls.lastName.invalid" class="form-control-feedback">
+          veuillez renseigner un nom
+        </div>
       </div>
       <div class="form-group" [class.has-success]="registerForm.controls.email.valid" [class.has-danger]="registerForm.controls.email.invalid && registerForm.controls.email.touched">
         <label for="email" class="form-control-label">Adresse email*</label>
         <input type="email" class="form-control form-control-success form-control-danger" formControlName="email" id="email">
-      </div>
-      <div *ngIf="registerForm.controls.email.touched && registerForm.controls.email.invalid" class="alert alert-danger">
-        Email invalide
+        <div *ngIf="registerForm.controls.email.touched && registerForm.controls.email.invalid" class="form-control-feedback">
+          Email invalide
+        </div>
       </div>
       <div class="form-group" [class.has-success]="registerForm.controls.password.valid" [class.has-danger]="registerForm.controls.password.invalid && registerForm.controls.password.touched">
-        <label for="pwd" class="form-control-label">Mot de passe* </label> <i class="fa fa-comment-o info"placement="right"
-        ngbPopover=" Le mot de passe doit avoir plus de 6 caractères et doit contenir au moins un chiffre."></i>
+        <label for="pwd" class="form-control-label">Mot de passe* </label> <i class="fa fa-comment-o info" placement="right"
+          ngbPopover=" Le mot de passe doit avoir plus de 6 caractères et doit contenir au moins un chiffre."></i>
         <input type="password" class="form-control form-control-success form-control-danger" formControlName="password" id="pwd">
-      </div>
-      <div *ngIf="registerForm.controls.password.touched && registerForm.controls.password.invalid" class="alert alert-danger">
-        Le mot de passe doit avoir plus de 6 caractères et doit contenir au moins un chiffre.
+        <div *ngIf="registerForm.controls.password.touched && registerForm.controls.password.invalid" class="form-control-feedback">
+          Le mot de passe doit avoir plus de 6 caractères et doit contenir au moins un chiffre.
+        </div>
       </div>
       <p>* champs obligatoires</p>
     </div>
@@ -43,7 +42,6 @@
       <button type="submit" [disabled]="registerForm.invalid" class="btn btn-secondary">S'inscrire</button>
     </div>
   </form>
-
 </ng-template>
 
 <div (click)="open(register)">S'inscrire</div>

@@ -1,9 +1,9 @@
 import { Component, OnInit,Input,Output,EventEmitter} from '@angular/core';
 import {FormBuilder,FormGroup} from '@angular/forms';
-import { Poi } from 'app/poi/poi';
+import { Poi } from 'app/contribustions/poi/poi';
 import * as L from 'leaflet';
 import 'leaflet.markercluster';
-
+import { LoginService} from 'app/services/login.service';
 @Component({
   selector: 'details-info',
   templateUrl: './details-info.component.html',
@@ -19,7 +19,8 @@ export class DetailsInfoComponent implements OnInit {
   '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
   'Imagery © <a href="http://mapbox.com">Mapbox</a>';
    infoForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(private connect :LoginService,
+    private fb: FormBuilder) {
   }
 
 

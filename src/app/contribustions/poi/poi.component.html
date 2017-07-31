@@ -4,11 +4,9 @@
       <div class="media-left">
         <img class="media-object" src="{{data.url_img1}}" width="200px" height="170px">
       </div>
-
       <div class="media-body">
         <div class="container">
           <div class="row">
-
             <div class="col-4">
               <h4 class="media-heading">
                 {{ data.typespois}}
@@ -17,14 +15,11 @@
               <h6>{{ data.postal_code}}</h6>
               <br>
               <h6>{{users[data.userId-1].name}}</h6>
-              <a [routerLink]="['/contributions',data.id]"  class="float-right">Voir +</a>
-
+              <a [routerLink]="['/contributions',data.id]" class="float-right">Voir +</a>
             </div>
-
             <div class="col-0">
               <div class="ligne_verticale"></div>
             </div>
-
             <div class="col-2">
               <br>
               <button type="button" class="btn btn-success">

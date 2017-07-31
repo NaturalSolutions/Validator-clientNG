@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { LoginService} from './login-modal/login.service';
+import { LoginService} from 'app/services/login.service';
 import 'rxjs/add/operator/debounceTime';
 import { Subject } from 'rxjs/Subject';
 

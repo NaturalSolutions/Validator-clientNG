@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http ,Headers,RequestOptions,Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Poi } from 'app/poi/poi';
+import { Poi } from 'app/contribustions/poi/poi';
 import 'rxjs/add/operator/map';
 import * as _ from 'lodash';
 import 'rxjs/add/operator/catch';
@@ -24,13 +24,11 @@ export class PoiService {
     }
     return this.http.get(poisUrl).map(res => res.json());
   }
-
   getPoiId(id: number) {
     var poisUrl = this.poisUrl+"pois";
     poisUrl += "/" + id;
     return this.http.get(poisUrl).map(res => res.json());
   }
-
   createPoi(poi : Poi) {
     var poisUrl = this.poisUrl;
       let headers = new Headers({ 'Content-Type': 'application/json' });
@@ -40,7 +38,6 @@ export class PoiService {
      .catch(this.handleError);
     
   }
-
   updatePoi(id: number,param : any) {
     var poisUrl = this.poisUrl+"pois/"+id;
       let headers = new Headers({ 'Content-Type': 'application/json' });

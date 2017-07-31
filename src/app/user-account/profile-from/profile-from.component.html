@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="card">
+    <div class="card-block">
+<form [formGroup]="profilForm" (submit)="change(profilForm)">
+    <div class="modal-body">
+      <div class="form-group " [class.has-success]="profilForm.controls.firstName.valid" [class.has-danger]="profilForm.controls.firstName.invalid && profilForm.controls.firstName.touched">
+        <label for="firstName" class="form-control-label">Prénom*</label>
+        <input class="form-control form-control-success form-control-danger" formControlName="firstName" id="firstName">
+        <div *ngIf="profilForm.controls.firstName.touched && profilForm.controls.firstName.invalid" class="form-control-feedback">
+          veuillez renseigner un Prénom
+        </div>
+      </div>
+      <div class="form-group" [class.has-success]="profilForm.controls.lastName.valid" [class.has-danger]="profilForm.controls.lastName.invalid && profilForm.controls.lastName.touched">
+        <label for="lastName" class="form-control-label">Nom*</label>
+        <input class="form-control form-control-success form-control-danger" formControlName="lastName" id="lastName">
+        <div *ngIf="profilForm.controls.lastName.touched && profilForm.controls.lastName.invalid" class="form-control-feedback">
+          veuillez renseigner un nom
+        </div>
+      </div>
+      <div class="form-group" [class.has-success]="profilForm.controls.email.valid" [class.has-danger]="profilForm.controls.email.invalid && profilForm.controls.email.touched">
+        <label for="email" class="form-control-label">Adresse email*</label>
+        <input type="email" class="form-control form-control-success form-control-danger" formControlName="email" id="email">
+        <div *ngIf="profilForm.controls.email.touched && profilForm.controls.email.invalid" class="form-control-feedback">
+          Email invalide
+        </div>
+      </div>
+      <div class="form-group" [class.has-success]="profilForm.controls.password.valid" [class.has-danger]="profilForm.controls.password.invalid && profilForm.controls.password.touched">
+        <label for="pwd" class="form-control-label">Mot de passe* </label> <i class="fa fa-comment-o info" placement="right"
+          ngbPopover=" Le mot de passe doit avoir plus de 6 caractères et doit contenir au moins un chiffre."></i>
+        <input type="password" class="form-control form-control-success form-control-danger" formControlName="password" id="pwd">
+        <div *ngIf="profilForm.controls.password.touched && profilForm.controls.password.invalid" class="form-control-feedback">
+          Le mot de passe doit avoir plus de 6 caractères et doit contenir au moins un chiffre.
+        </div>
+      </div>
+      <p>* champs obligatoires</p>
+    </div>
+      <button type="submit" [disabled]="profilForm.invalid" class="btn btn-secondary">Modifier</button>
+  </form>
+      </div>
+  </div>
+      </div>
+

@@ -1,0 +1,53 @@
+.btn {
+  cursor: pointer;
+}
+
+li.text {
+  padding-top: 20px
+}
+
+.card {
+  margin-bottom: 20px
+}
+
+.card.poi {
+  margin-bottom: 10px
+}
+
+.card-block.poi {
+  padding: 10px;
+  background-color: #f1f4f1
+}
+
+p.card-text {
+  margin-left: 20px;
+}
+
+.ligne_verticale {
+  width: 5px;
+  border-left: 2px solid #eceeef;
+  height: 100%;
+}
+
+.container {
+  margin-top: 50px
+}
+
+.media-object {
+  border-radius: 10px;
+}
+
+.media-body {
+  margin-left: 20px;
+  vertical-align: middle
+}
+
+.badges {
+  padding: 10px
+}
+
+.addcontrib{
+    color: black;
+    font-size: larger;
+    margin-bottom: 20px
+}

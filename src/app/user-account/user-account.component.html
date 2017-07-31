@@ -1,14 +1,80 @@
-
-    <h1> Mon compte </h1>
-    <h3> {{currentUser.firstName}} {{currentUser.email}}</h3>
-    <h2>All registered users:</h2>
-    <ul>
-        <li *ngFor="let user of users">
-            {{user.email}} ({{user.firstName}} {{user.lastName}})
-           
-             <button type="button" class="btn  btn-danger" (click)="deleteUser(user._id)">
-  <span class="fa fa-trash-o" aria-hidden="true"></span>
-</button>
-        </li>
-    </ul>
-    <button  (click)="logout()"  >Se déconnecter</button>
+<div class="container">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Mes informations</h4>
+      <hr>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <ul class="list-unstyled">
+              <li class="text-center">
+                <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar1.png">
+              </li>
+              <li class="text text-center">
+                <h4 class="text-capitalize">{{currentUser.firstName}}</h4>
+                <p class="text-muted text-capitalize">Administrateur</p>
+              </li>
+              <li class=" text text-center">
+                <div class="btn-group-vertical btn-block">
+                  <a routerLink="edit" class="btn  btn-secondary"><i class="fa fa-cog pull-right"></i>Modifier mon Profil</a>
+                  <a class="btn  btn-secondary" (click)="logout()"><i class="fa fa-sign-out pull-right"></i>Se déconnecter</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-0">
+            <div class="ligne_verticale"></div>
+          </div>
+          <div class="col-md-7">
+            <p class="card-text">Prénom: {{currentUser.firstName}}</p>
+            <p class="card-text">Nom: {{currentUser.lastName}}</p>
+            <p class="card-text">Adresse: {{currentUser.adress}}</p>
+            <p class="card-text">Email: {{currentUser.email}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Mes Contributions</h4>
+      <hr>
+      <div class="addcontrib"><a href="" class="addcontrib"><img class="img-fluid" width="30px" src="assets/images/plus.png"/> Ajouter une nouvelle contribution</a>
+      </div>
+      <div *ngFor="let item of pois | paginate: { itemsPerPage: 4, currentPage: p }">
+        <div class="row">
+          <div class=" col-md-8 offset-md-1">
+            <div class="card poi">
+              <div class="card-block poi">
+                <div class="media">
+                  <div class="media-left">
+                    <img class="media-object" src="{{item.url_img1}}" width="120px" height="100px">
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">
+                      {{ item.typespois}}
+                    </h4>
+                    <h6> {{item.name }}</h6>
+                    <h6>{{item.postal_code}}</h6>
+                    <a [routerLink]="['/contributions',item.id]" class="float-right">Voir +</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pagination-controls class="my-pagination" (pageChange)="p = $event" nextLabel="Suivant" previousLabel="précédent"></pagination-controls>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Mes badges</h4>
+      <hr>
+      <img class="badges" src="assets/logo/png/bienvenue.png" width="100px" height="100px">
+      <img class="badges" src="assets/logo/png/marseille.png" width="100px" height="100px">
+      <img class="badges" src="assets/logo/png/01_contribution.png" width="100px" height="100px">
+      <img class="badges" src="assets/logo/png/3Ardt_MARSEILLE.png" width="100px" height="100px">
+    </div>
+  </div>
+</div>

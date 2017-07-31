@@ -1,10 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PoiService } from 'app/poi.service';
-import { UsersService } from 'app/users/users.service';
+import { PoiService } from 'app/services/poi.service';
+import { UsersService } from 'app/services/users.service';
 import { User } from 'app/users/user/user';
-import { Poi } from 'app/poi/poi';
-import {Com} from 'app/comm';
-
+import { Poi } from 'app/contribustions/poi/poi';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -15,7 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class PoiDetailsComponent implements OnInit {
     poi: Poi;
-    com: Com;
+    com: any;
     user: User;
     poiComments;
     id: number;
@@ -78,8 +76,6 @@ export class PoiDetailsComponent implements OnInit {
         this.poisService.deleteComments(event).subscribe(result => this.loadComments(this.id));
     }
     private newInfo(event){
-        console.log("sssss");
         this.poisService.updatePoi(this.id, event).subscribe(result => this.loadPois(this.id));
-    }
-    
+    } 
 }

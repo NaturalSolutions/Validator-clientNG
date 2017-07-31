@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges,ElementRef } from '@angular/core';
-import { Poi } from 'app/poi/poi';
+import { Poi } from '../poi/poi';
 import * as L from 'leaflet';
 import 'leaflet.markercluster';
 

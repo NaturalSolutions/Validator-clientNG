@@ -1,10 +1,18 @@
-<div class="float-right modif">
+<div *ngIf="!update && connect.isconnected()" (click)="modifie()" class="float-right modif">
   Modifier
   <span class="fa-stack fa-lg">
     <i class="fa fa-circle fa-stack-2x " style="color:brown"></i>
     <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> 
   </span>
 </div>
+<form *ngIf="update" [formGroup]="galleryForm" (submit)="reset()" (submit)="change(galleryForm)">
+  <div class="form-group">
+<h2>Upload Files Sample</h2>  
+<input type="file" (change)="fileChange($event)" placeholder="Upload file">
+  </div>
+  <button  (click)="addImg()" class="btn btn-success pull-right">Modifier</button>
+  <button type="submit" class="btn btn-danger pull-right">Anuuler</button>
+</form>
 <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
 <div class="media my-3">
   <img class="rounded-circle mr-2" src="http://lorempixel.com/80/80/people?random=3" height="45px" width="45px">
@@ -12,3 +20,4 @@
     <p>Contributeur {{user.name}} 26 juin 2017</p>
   </div>
 </div>
+

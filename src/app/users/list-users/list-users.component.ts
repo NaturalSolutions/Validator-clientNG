@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../users.service';
+import { UsersService } from 'app/services/users.service';
 import { User } from '../user/user';
+import { PoiService } from 'app/services/poi.service';
+import { Poi } from 'app/contribustions/poi/poi';
 
 @Component({
   selector: 'app-list-users',
@@ -12,13 +14,14 @@ export class ListUsersComponent implements OnInit {
   users: User[];
   isLoading = true;
   currentUser: User;
-
-  constructor(private usersService: UsersService) {
+ pois: Poi[];
+  constructor(private usersService: UsersService,
+   private poisService: PoiService) {
   }
 
   ngOnInit() {
     this.loadUsers();
-
+  
   }
 
   private loadUsers() {
@@ -30,8 +33,17 @@ export class ListUsersComponent implements OnInit {
   }
   select(user) {
     this.currentUser = user;
+      this.loadPois();
     console.log(this.currentUser.address.geo.lat);
   }
+    private loadPois() {
+    this.poisService.getPoi({ userId: this.currentUser.id }).subscribe(res => this.pois = res
+      , null,
+      () => {
+        this.isLoading = false;
+      });
+  }
+
 
 }
 

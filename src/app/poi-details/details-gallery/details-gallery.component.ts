@@ -1,7 +1,8 @@
-import {Component,OnInit,Input } from '@angular/core';
-import {NgxGalleryOptions,NgxGalleryImage,NgxGalleryAnimation} from 'ngx-gallery';
-import {Poi} from 'app/poi/poi';
+import { Component, OnInit, Input } from '@angular/core';
+import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+import { Poi } from 'app/contribustions/poi/poi';
 import { User } from 'app/users/user/user';
+import { LoginService} from 'app/services/login.service';
 
 @Component({
   selector: 'details-gallery',
@@ -10,10 +11,14 @@ import { User } from 'app/users/user/user';
 })
 export class DetailsGalleryComponent implements OnInit {
 
+  constructor(private connect :LoginService) {
+  }
+  private isUploadBtn: boolean = true;
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
   @Input() pois: Poi;
   @Input() user: User;
+  update = false;
 
   ngOnInit() {
     this.galleryOptions = [{
@@ -37,6 +42,9 @@ export class DetailsGalleryComponent implements OnInit {
       medium: this.pois.url_img3,
     }
     ];
+  }
+  private modifie() {
+    this.update = true;
   }
 
   private addImg() {

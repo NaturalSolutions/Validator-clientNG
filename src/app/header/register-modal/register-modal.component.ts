@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation,Output,EventEmitter } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { RegisterService } from './register.service';
+import { RegisterService } from 'app/services/register.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from 'app/users/user/user';
 import{FormValidator} from 'app/shared/formValidator.component'
