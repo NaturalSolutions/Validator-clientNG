@@ -1,5 +1,5 @@
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
-import {Poi} from 'app/contribustions/poi/poi';
+import {Poi} from 'app/contributions/poi/poi';
 import {FormBuilder,FormGroup} from '@angular/forms';
 import { LoginService} from 'app/services/login.service';
 @Component({
@@ -20,16 +20,16 @@ export class DescriptionComponent implements OnInit {
     })
   }
 
-  change(descForm) {
+  private change(descForm) {
     this.update=false;
     let newValue = descForm.value;
     this.desc.emit(newValue);
     
   }
-  reset() {
+  private reset() {
      this.update=false;
   }
- modifie(){
+ private modifie(){
    this.update=true;
  }
 

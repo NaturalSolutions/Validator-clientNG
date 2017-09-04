@@ -1,0 +1,43 @@
+.textTitle {
+  color: black;
+  font-size: 3em;
+  font-weight: 100
+}
+
+.textbody {
+  margin: 5% 25%
+}
+
+.fold2,
+.fold3 {
+  margin: 5% 0
+}
+
+.fold3 {
+  background-color: #42464a;
+}
+
+.card {
+  margin: 0 5%
+}
+.card-title {
+  margin:0
+}
+.card-text {
+  font-size: 1.2em;
+  margin-top: 10px
+}
+
+.tilteCard {
+  text-transform: uppercase;
+  color: white;
+  font-weight: 200;
+  margin: 5%
+}
+
+.btn-outline-secondary {
+  margin: 3%
+}
+.img_card{margin-right: 10px;
+  
+}

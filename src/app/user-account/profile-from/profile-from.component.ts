@@ -33,7 +33,7 @@ export class ProfileFromComponent implements OnInit {
   change(profilForm) {
    
   }
-private updateUser(user: string) {
+private updateUser(user) {
     this.regiterService.update(user).subscribe(() => { this.loadAllUsers() });
   }
    private loadAllUsers() {

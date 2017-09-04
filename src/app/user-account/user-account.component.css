@@ -19,8 +19,11 @@ li.text {
   background-color: #f1f4f1
 }
 
-p.card-text {
+p.card-text.info {
   margin-left: 20px;
+  margin-bottom: 20px;
+  color: black;
+font-size: 1.2em
 }
 
 .ligne_verticale {
@@ -42,8 +45,9 @@ p.card-text {
   vertical-align: middle
 }
 
-.badges {
-  padding: 10px
+.listBadges {
+  padding: 10px;
+  display: inline-block;
 }
 
 .addcontrib{

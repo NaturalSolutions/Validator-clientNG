@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
-import { Poi } from 'app/contribustions/poi/poi';
+import { Poi } from 'app/contributions/poi/poi';
 import { User } from 'app/users/user/user';
 import { LoginService} from 'app/services/login.service';
 

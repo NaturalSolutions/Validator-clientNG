@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LoginService} from 'app/services/login.service';
 import 'rxjs/add/operator/debounceTime';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
 
 @Component({
@@ -17,7 +18,10 @@ export class HeaderComponent implements OnInit {
 
   staticAlertClosed = false;
   successMessage: string;
-constructor(private connect :LoginService){}
+constructor( private router: Router,
+  private logService:LoginService){
+
+  }
 
   ngOnInit() {
     setTimeout(() => this.staticAlertClosed = true, 20000);
@@ -33,9 +37,11 @@ constructor(private connect :LoginService){}
 
   closeAlert() {
     this.show = false;
-
   }
-
+    private logout() {
+    this.logService.logout();
+    this.router.navigate(['contributions']);
+  }
 }
 
 

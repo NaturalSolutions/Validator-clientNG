@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import {Ng2PaginationModule} from 'ng2-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { ListUsersComponent } from './list-users/list-users.component';
 import { UserComponent } from './user/user.component';
 import { SharedModule }      from 'app/shared/shared.module';

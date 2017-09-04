@@ -21,20 +21,15 @@ export class CommentsComponent implements OnInit {
     })
   }
 
-  add(comForm) {
+  private add(comForm) {
     let newValue = comForm.value;
     this.com.emit(newValue);
     comForm.reset();
     
   }
- 
-
-  delete(comment){
+  private delete(comment){
     this.currentComment=comment;
      this.commentId.emit(this.currentComment.id);
-    console.log(this.currentComment.id);
-    
-   
  }
 
  @Output() com = new EventEmitter();

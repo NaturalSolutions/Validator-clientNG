@@ -24,7 +24,7 @@ export class RegisterModalComponent {
     private formBuilder: FormBuilder) {
   };
 
-  open(content) {
+  private open(content) {
     this.modalRef = this.modalService.open(content, { windowClass: 'custom-modal' });
     this.msg_error = null;
      this.registerForm = this.formBuilder.group({
@@ -35,11 +35,11 @@ export class RegisterModalComponent {
         })
   }
 
-  change(registerForm) {
+private change(registerForm) {
     this.user = registerForm.value;
     this.registerService.create(this.user)
       .subscribe(
-      data => console.log(this.user),
+      data => this.user,
       error => {
         this.msg_error = error._body
       },

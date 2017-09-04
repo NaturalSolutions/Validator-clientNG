@@ -1,4 +1,10 @@
-<img class="img-fluid" src="assets/users1.jpg" width="100%" />
+<div class="container-fluid">
+  <div class="row image align-items-center">
+    <div class="col-lg-12 ">
+      <h1>Les utilisateurs</h1>
+    </div>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-lg-5">
@@ -8,7 +14,7 @@
       <div *ngFor="let user of users ">
         <user (click)="select(user)" [active]=" currentUser" [userData]="user" class="a"></user>
       </div>
-       </div>
+    </div>
     <div class="col-lg-7">
       <div *ngIf="currentUser">
         <div class="card">
@@ -17,7 +23,6 @@
             <hr>
             <p class="card-text">Prénom: {{currentUser.name}}</p>
             <p class="card-text">Nom: {{currentUser.name}}</p>
-            <p class="card-text">Adresse: {{currentUser.address.street}}</p>
             <p class="card-text">Email: {{currentUser.email}}</p>
           </div>
           <div class="card-block">
@@ -25,9 +30,9 @@
             <hr>
           </div>
           <div *ngFor="let item of pois | paginate: { itemsPerPage: 3, currentPage: p }">
-                <div class="row">
-          <div class=" col-md-10 offset-md-1">
-            <div class="card poi">
+            <div class="row">
+              <div class=" col-md-10 offset-md-1">
+                <div class="card poi">
                   <div class="card-block poi">
                     <div class="media">
                       <div class="media-left">
@@ -45,10 +50,10 @@
                   </div>
                 </div>
               </div>
-              </div>
-              </div>
+            </div>
+          </div>
           <pagination-controls class="my-pagination" (pageChange)="p = $event" nextLabel="Suivant" previousLabel="précédent"></pagination-controls>
-        
+
           <div class="card-block">
             <h4 class="card-title">badges</h4>
             <hr>

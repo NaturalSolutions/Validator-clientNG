@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-block">
+    <div class="media">
+      <img class="d-flex mr-3" src="{{data.url_img1}}" width="200px" height="170px">
+      <div class="media-body">
+        <div class="row align-items-center">
+          <div class="col-sm-8">
+            <h4 class="media-heading">
+              {{ data.typespois}}
+            </h4>
+            <h6> {{data.name }}</h6>
+            <h6>{{ data.postal_code}}</h6>
+            <br>
+            <h6>{{users[data.userId-1].name}}</h6>
+          </div>
+          <div class="col-sm-4">
+            <div class="percent">10%</div>
+            <round-progress [current]="10" [max]="100"></round-progress>
+          </div>
+        </div>
+        <a [routerLink]="['/contributions',data.id]" class="float-right">Voir +</a>
+      </div>
+    </div>
+  </div>
+</div>

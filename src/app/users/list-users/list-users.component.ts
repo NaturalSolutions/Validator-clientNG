@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'app/services/users.service';
 import { User } from '../user/user';
 import { PoiService } from 'app/services/poi.service';
-import { Poi } from 'app/contribustions/poi/poi';
+import { Poi } from 'app/contributions/poi/poi';
 
 @Component({
   selector: 'app-list-users',
@@ -21,7 +21,6 @@ export class ListUsersComponent implements OnInit {
 
   ngOnInit() {
     this.loadUsers();
-  
   }
 
   private loadUsers() {
@@ -34,7 +33,6 @@ export class ListUsersComponent implements OnInit {
   select(user) {
     this.currentUser = user;
       this.loadPois();
-    console.log(this.currentUser.address.geo.lat);
   }
     private loadPois() {
     this.poisService.getPoi({ userId: this.currentUser.id }).subscribe(res => this.pois = res
@@ -43,7 +41,6 @@ export class ListUsersComponent implements OnInit {
         this.isLoading = false;
       });
   }
-
 
 }
 

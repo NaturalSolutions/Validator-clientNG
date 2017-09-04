@@ -23,7 +23,7 @@ export class LoginModalComponent  {
         private formBuilder: FormBuilder) {
     }
 
-    open(content) {
+    private open(content) {
         this.modalRef = this.modalService.open(content, { windowClass: 'custom-modal' });
         this.msg_error = null;
         this.loginForm = this.formBuilder.group({
@@ -37,7 +37,6 @@ export class LoginModalComponent  {
         this.loginService.login(this.user.email, this.user.password)
             .subscribe(
             data => {
-                console.log(this.user);
             },
             error => {
                 this.msg_error = error._body

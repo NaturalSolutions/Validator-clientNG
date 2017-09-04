@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http ,Headers,RequestOptions,Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Poi } from 'app/contribustions/poi/poi';
+import { Poi } from 'app/contributions/poi/poi';
 import 'rxjs/add/operator/map';
 import * as _ from 'lodash';
 import 'rxjs/add/operator/catch';
@@ -46,7 +46,6 @@ export class PoiService {
     .map(res => res.json())
      .catch(this.handleError);
   }
-
   	getComments(poiId){
        var poisUrl = this.poisUrl;
 		return this.http.get(poisUrl+"comments/?poiId=" + poiId)

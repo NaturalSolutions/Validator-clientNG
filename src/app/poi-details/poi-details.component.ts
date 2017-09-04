@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { PoiService } from 'app/services/poi.service';
 import { UsersService } from 'app/services/users.service';
 import { User } from 'app/users/user/user';
-import { Poi } from 'app/contribustions/poi/poi';
+import { Poi } from 'app/contributions/poi/poi';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

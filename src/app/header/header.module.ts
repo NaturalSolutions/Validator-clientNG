@@ -20,6 +20,6 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
     RouterModule
   ],
   declarations: [HeaderComponent,RegisterModalComponent, LoginModalComponent],
-  exports:[HeaderComponent]
+  exports:[HeaderComponent, LoginModalComponent]
 })
 export class HeaderModule { }

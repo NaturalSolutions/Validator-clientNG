@@ -1,4 +1,7 @@
-<div class="container">
+<div *ngIf="userIsLoading && poiIsLoading">
+  <loader></loader>
+</div>
+<div *ngIf="!userIsLoading && !poiIsLoading" class="container">
   <div class="card">
     <div class="card-block">
       <h4 class="card-title">Mes informations</h4>
@@ -8,11 +11,11 @@
           <div class="col-md-4">
             <ul class="list-unstyled">
               <li class="text-center">
-                <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                <img class="img-fluid" src={{currentUser.photo}}>
               </li>
               <li class="text text-center">
                 <h4 class="text-capitalize">{{currentUser.firstName}}</h4>
-                <p class="text-muted text-capitalize">Administrateur</p>
+                <p class="text-muted text-capitalize">{{currentUser.role}}</p>
               </li>
               <li class=" text text-center">
                 <div class="btn-group-vertical btn-block">
@@ -26,10 +29,18 @@
             <div class="ligne_verticale"></div>
           </div>
           <div class="col-md-7">
-            <p class="card-text">Prénom: {{currentUser.firstName}}</p>
-            <p class="card-text">Nom: {{currentUser.lastName}}</p>
-            <p class="card-text">Adresse: {{currentUser.adress}}</p>
-            <p class="card-text">Email: {{currentUser.email}}</p>
+            <p class="card-text info">Prénom: {{currentUser.firstName}}</p>
+            <p class="card-text info">Nom: {{currentUser.lastName}}</p>
+            <p class="card-text info">Email: {{currentUser.email}}</p>
+            <p class="card-text info">Score: {{currentUser.score}}</p>
+            <div class="card">
+                <div class="card-header">
+                  <h6>À propos de moi</h6>
+                </div>
+                <div class="card-block">
+                  <p  class="card-text">{{currentUser.desc}}</p>
+                </div>
+              </div>
           </div>
         </div>
       </div>
@@ -71,10 +82,9 @@
     <div class="card-block">
       <h4 class="card-title">Mes badges</h4>
       <hr>
-      <img class="badges" src="assets/logo/png/bienvenue.png" width="100px" height="100px">
-      <img class="badges" src="assets/logo/png/marseille.png" width="100px" height="100px">
-      <img class="badges" src="assets/logo/png/01_contribution.png" width="100px" height="100px">
-      <img class="badges" src="assets/logo/png/3Ardt_MARSEILLE.png" width="100px" height="100px">
+      <div class="listBadges" *ngFor="let badge of badges">
+        <img  src="{{badge.url_logo}}" width="100px" height="100px">
+      </div>
     </div>
   </div>
 </div>

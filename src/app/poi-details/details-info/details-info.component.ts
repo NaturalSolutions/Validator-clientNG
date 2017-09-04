@@ -1,6 +1,6 @@
 import { Component, OnInit,Input,Output,EventEmitter} from '@angular/core';
 import {FormBuilder,FormGroup} from '@angular/forms';
-import { Poi } from 'app/contribustions/poi/poi';
+import { Poi } from 'app/contributions/poi/poi';
 import * as L from 'leaflet';
 import 'leaflet.markercluster';
 import { LoginService} from 'app/services/login.service';
@@ -54,10 +54,10 @@ export class DetailsInfoComponent implements OnInit {
     this.info.emit(newValue);
     
   }
- reset() {
+ private reset() {
      this.update=false;
   }
- modifie(){
+ private modifie(){
    this.update=true;
  }
 
